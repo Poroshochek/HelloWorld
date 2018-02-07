@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $tasks = array(
+        'Go to club',
+        'Clean my room',
+        'Work it hard'
+    );
+
+    return view('welcome', compact('tasks'));
 });
 
 
