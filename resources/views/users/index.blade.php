@@ -9,11 +9,15 @@
 </head>
 <body>
 
-    <ul>
-        @foreach ($users as $user)
-            <li>{{ $user->name .' '. $user->email }}</li>
-        @endforeach
-    </ul>
+<ul>
+    @foreach ($users as $user)
+        <li>
+            <a href="/users/{{ $user->id }}">
+                {{ $user->name .' '. $user->email }}
+            </a>
+        </li>
+    @endforeach
+</ul>
 
 </body>
 </html>

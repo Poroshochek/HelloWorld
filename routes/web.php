@@ -11,18 +11,23 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/users', function () {
 
-    $tasks = array(
-        'Go to club',
-        'Clean my room',
-        'Work it hard'
-    );
 
-    return view('welcome', compact('tasks'));
+    $users = App\User::all();
+
+    return view('users.index', compact('users'));
+});
+
+Route::get('/users/{id}', function ($id) {
+
+    $user = DB::table('users')->find($id);
+
+    return view('users.show', compact('user'));
 });
 
 
-Route::get('/about', function () {
-   return view('about');
-});
+
+//Route::get('/about', function () {
+//   return view('about');
+//});

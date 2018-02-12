@@ -8,12 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <ul>
-        @foreach ($users as $user)
-            <li>{{ $user->name .' '. $user->email }}</li>
-        @endforeach
-    </ul>
-
+    <h1>{{ $tasks->body  }}</h1>
 </body>
 </html>
